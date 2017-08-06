@@ -1,0 +1,42 @@
+
+
+CREATE TABLE IF NOT EXISTS `note` (
+  `noteid` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `note` varchar(1000) NOT NULL,
+  `createtime` date NOT NULL,
+  `lastupdatetime` date NOT NULL,
+  `userid` int(11) NOT NULL,
+  PRIMARY KEY (`noteid`),
+  KEY `fk_note_id` (`userid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+
+
+INSERT INTO `note` (`noteid`, `title`, `note`, `createtime`, `lastupdatetime`, `userid`) VALUES
+(1, 'first note', 'This is my first note', '2017-08-06', '2017-08-06', 1),
+(2, 'Second note', 'This is my second note', '2017-08-06', '2017-08-06', 1),
+(3, 'third note', 'This is my third note', '2017-08-06', '2017-08-06', 1);
+
+
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `userid` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(25) NOT NULL,
+  `createtime` date NOT NULL,
+  `lastupdatetime` date NOT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+
+
+INSERT INTO `user` (`userid`, `email`, `password`, `createtime`, `lastupdatetime`) VALUES
+(1, 'divyeshc@gmail.com', 'xyz12345', '2017-08-06', '2017-08-06'),
+(2, 'xyz@abc.com', 'abs12345', '2017-08-06', '2017-08-06');
+
+
+ALTER TABLE `note`
+  ADD CONSTRAINT `fk_note_id` FOREIGN KEY (`userid`) REFERENCES `user` (`userid`);
+
+
