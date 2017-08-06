@@ -17,11 +17,13 @@ cUrl Commands:
 1)	curl -u divyeshc@gmail.com:xyz12345 -i -H 'Content-Type:application/json' http://localhost:7070/RestHibernateCRUD/rest/note/getNote/1
 
 2)	curl -u divyeshc@gmail.com:xyz12345 -i -H 'Content-Type:application/json' http://localhost:7070/RestHibernateCRUD/rest/note/addNote/1
-Post body
+
+Post body:
 {"title":"fifth note","note":"This is my fifth note","createTime":1501871400000,"lastUpdateTime": 1501957800000}
 
 3)	curl -u divyeshc@gmail.com:xyz12345 -i -H 'Content-Type:application/json' http://localhost:7070/RestHibernateCRUD/rest/note/deleteNote/1
 
 4)	curl -u divyeshc@gmail.com:xyz12345 -i -H 'Content-Type:application/json' http://localhost:7070/RestHibernateCRUD/rest/note/updatetNote/5
-Post body
+
+Post body:
 {"title":"fifth note2","note":"This is my fifth note","createTime":1501871400000,"lastUpdateTime": 1501957800000}
