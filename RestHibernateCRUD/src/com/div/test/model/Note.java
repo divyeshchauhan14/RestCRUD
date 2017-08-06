@@ -21,22 +21,16 @@ public class Note implements Serializable {
 
 	private static final long serialVersionUID = -8223013212025027296L;
 
-
 	private int noteId;
-
 	
 	private String title;
 
-	
 	private String note;
 
-	
 	private Date createTime;
-
 	
 	private Date lastUpdateTime;
-
-
+	
 	private User user;
 
 	public Note() {

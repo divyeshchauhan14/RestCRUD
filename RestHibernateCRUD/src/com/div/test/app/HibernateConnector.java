@@ -11,6 +11,12 @@ public class HibernateConnector {
 	private Configuration cfg;
     private SessionFactory sessionFactory;
 	
+    private HibernateConnector() throws HibernateException {
+        cfg = new Configuration().configure();
+         
+        sessionFactory = cfg.buildSessionFactory();
+    }
+    
 	public static synchronized HibernateConnector getInstance() {
 		if(connector == null)
 		{
@@ -18,9 +24,7 @@ public class HibernateConnector {
 		}
 		return connector;
 	}
-	
-	private HibernateConnector() {}
-	
+		
 	public Session getSession() throws HibernateException {
         Session session = sessionFactory.openSession();
         if (!session.isConnected()) {

@@ -8,6 +8,20 @@ import com.div.test.model.Note;
 
 public class NoteServiceImpl implements NoteService {
 
+private static NoteServiceImpl noteService;
+	
+	public static NoteServiceImpl getInstance()
+	{
+		if(noteService == null)
+		{
+			noteService = new NoteServiceImpl();
+		}
+		return noteService;
+	}
+	
+	private NoteServiceImpl()
+	{}
+	
 	NoteDao noteDao = new NoteDaoImpl();
 	@Override
 	public Note findById(int noteId) {

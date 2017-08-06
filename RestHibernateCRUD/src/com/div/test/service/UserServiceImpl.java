@@ -8,6 +8,17 @@ import com.div.test.model.User;
 
 public class UserServiceImpl implements UserService {
 
+	private static UserServiceImpl userService;
+
+	public static UserServiceImpl getInstance() {
+		if (userService == null) {
+			userService = new UserServiceImpl();
+		}
+		return userService;
+	}
+
+	private UserServiceImpl() {}
+	
 	UserDao userDao = new UserDaoImpl();
 	
 	@Override
